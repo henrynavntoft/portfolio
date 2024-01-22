@@ -3,25 +3,100 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --light: #eae9e7;
+  --dark: #201e1f;
+  --primary: #78933d;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.accent {
+  color: var(--primary);
+}
+
+.noise {
+  background: url("/noiseEffect.svg");
+  background-repeat: repeat;
+}
+
+.animated-underline {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.animated-underline::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background-color: var(--dark);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+@layer base {
+  .font-outline {
+    -webkit-text-stroke: 0.01em var(--dark);
+    color: transparent;
+    font-size: 100px;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 80px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 60px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+@media (max-width: 799px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 1;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 1;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 500;
+  }
 }
