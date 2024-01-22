@@ -12,6 +12,7 @@
     "@nextui-org/react": "^2.2.9",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.0.29",
+    "@vercel/speed-insights": "^1.0.6",
     "framer-motion": "^10.18.0",
     "next": "14.0.4",
     "next-themes": "^0.2.1",

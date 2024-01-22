@@ -2,6 +2,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { Inter } from "next/font/google";
 import Header from "./components/Header";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Henry Navntoft | Portfolio",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
         </Providers>
+        <SpeedInsights />
       </body>
     </html>
   );
