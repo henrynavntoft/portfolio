@@ -4,8 +4,12 @@ import { Inter } from "next/font/google";
 import Header from "./components/Header";
 
 export const metadata = {
-  title: "HENRY NAVNTOFT",
-  description: "",
+  title: "Henry Navntoft | Portfolio",
+  description:
+    "Henry Navntoft - Copenhagen based Web Developer student, aspiring to build accessible and beautiful digital solutions.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 const inter = Inter({
