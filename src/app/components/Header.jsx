@@ -19,7 +19,7 @@ export default function Header() {
     { name: "02 Projects", path: "/projects" },
     { name: "03 Services", path: "/services" },
     {
-      name: "04 Resumé",
+      name: "04 Resume",
       path: "/Resume_henry-navntoft.pdf",
     },
   ];
