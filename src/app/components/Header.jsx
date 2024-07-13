@@ -20,7 +20,7 @@ export default function Header() {
     { name: "03 Services", path: "/services" },
     {
       name: "04 Resume",
-      path: "/Resume_henry-navntoft.pdf",
+      path: "https://www.henrynavntoft.dk/Resume_Henry-Navntoft.pdf",
     },
   ];
 
