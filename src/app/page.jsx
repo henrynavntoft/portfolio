@@ -27,6 +27,9 @@ export default function Home() {
           versatile and holistic developer.
         </p>
       </article>
+      <article className="grid grid-cols-2 mx-auto px-6 max-w-5xl">
+        <h3 className="mb-6">Projects</h3>
+      </article>
     </div>
   );
 }
