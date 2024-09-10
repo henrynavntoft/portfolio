@@ -1,8 +1,10 @@
+import ProjectsSection from "./components/ProjectSection";
+
 export default function Home() {
   return (
     <div className="">
       <article className="mx-auto px-6 py-10 max-w-5xl">
-        <h1 className="mb-6">Henry Navntoft</h1>
+        <h2 className="mb-6">Henry Navntoft</h2>
         <h4 className="mb-6">
           Copenhagen based <span className="accent">Web Developer</span>{" "}
           student, aspiring to build{" "}
@@ -27,8 +29,9 @@ export default function Home() {
           versatile and holistic developer.
         </p>
       </article>
-      <article className="grid grid-cols-2 mx-auto px-6 max-w-5xl">
+      <article className="mx-auto px-6 max-w-5xl">
         <h3 className="mb-6">Projects</h3>
+        <ProjectsSection />
       </article>
     </div>
   );
