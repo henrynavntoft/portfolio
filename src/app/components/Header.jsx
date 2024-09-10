@@ -49,6 +49,7 @@ export default function Header() {
               color="foreground"
               className="py-6 flex justify-center"
               href={item.path}
+              target={item.path.startsWith("http") ? "_blank" : ""}
             >
               <h2>{item.name}</h2>
             </Link>
