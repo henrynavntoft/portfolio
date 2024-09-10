@@ -1,12 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import {Button} from "@nextui-org/react";
+
 
 export default function ProjectsSection() {
   const projects = [
     {
       name: "Human Film",
       description: "A film production company based in Denmark.",
-      link: "/projects/project-one",
+      link: "https://www.humanfilm.dk",
       screenshot: "https://storage.screenshotapi.net/www_humanfilm_dk__5f3e221fdb66.png",
     }
   ];
@@ -14,19 +18,21 @@ export default function ProjectsSection() {
   return (
     <article className="grid grid-cols-2 gap-4">
       {projects.map((project, index) => (
-        <div key={index} className="border border-black my-4 p-4 rounded-lg">
+        <div key={index} className="py-4">
           <Image
             width={1000}
             height={1000}
             src={project.screenshot}
             alt={`${project.name} screenshot`}
-            className="mb-4 w-full h-48 object-cover rounded-lg"
+            className="mb-4 w-full h-48 object-cover"
           />
-          <h4 className="text-xl font-bold mb-2">{project.name}</h4>
-          <p className="mb-4">{project.description}</p>
-          <Link href={project.link}>
+          <h4 className="text-xl font-bold">{project.name}</h4>
+          <p className="mb-4 font-light">{project.description}</p>
+          <Button> 
+          <Link href={project.link} target="_blank">
             View Project
           </Link>
+          </Button>
         </div>
       ))}
     </article>
