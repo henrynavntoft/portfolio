@@ -27,7 +27,7 @@ export function ThemeSwitcher() {
       checked={isDarkMode}
       onChange={(e) => handleThemeChange(e.target.checked)}
       size="lg"
-      color="default"
+      color="dark"
       thumbIcon={({ isSelected, className }) =>
         isSelected ? (
           <SunIcon className={className} />

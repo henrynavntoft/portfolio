@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body className="text-foreground bg-background">
+      <body className="">
         <Providers>
           <Header />
           {children}

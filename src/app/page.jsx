@@ -1,3 +1,4 @@
+import ContactSection from "./components/ContactSection";
 import ProjectsSection from "./components/ProjectSection";
 
 export default function Home() {
@@ -29,10 +30,14 @@ export default function Home() {
           versatile and holistic developer.
         </p>
       </article>
-      <article className="mx-auto px-6 max-w-5xl">
-        <h3 className="mb-6">Projects</h3>
+      <article className="mx-auto p-6 max-w-5xl">
+        <h3 className="mb-b">Projects</h3>
         <ProjectsSection />
       </article>
+      {/* <article className="mx-auto p-6 max-w-5xl">
+        <h3 className="mb-6">Contact</h3>
+        <ContactSection />
+      </article> */}
     </div>
   );
 }

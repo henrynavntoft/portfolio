@@ -1,9 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import {Button} from "@nextui-org/react";
-
+import {Button, Image} from "@nextui-org/react";
 
 export default function ProjectsSection() {
   const projects = [
@@ -25,6 +23,7 @@ export default function ProjectsSection() {
     <article className="grid sm:grid-cols-2 grid-cols-1 gap-8">
       {projects.map((project, index) => (
         <div key={index} className="py-4">
+         
           <Image
             width={1000}
             height={600}
@@ -32,6 +31,7 @@ export default function ProjectsSection() {
             alt={`${project.name} screenshot`}
             className="mb-4 object-cover"
           />
+      
           <h4 className="text-xl font-bold">{project.name}</h4>
           <p className="mb-4 font-light max-w-[80%]">{project.description}</p>
           <Button> 
