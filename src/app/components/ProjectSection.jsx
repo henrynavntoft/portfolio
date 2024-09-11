@@ -25,8 +25,6 @@ export default function ProjectsSection() {
         <div key={index} className="py-4">
          
           <Image
-            width={1000}
-            height={600}
             src={project.screenshot}
             alt={`${project.name} screenshot`}
             className="mb-4 object-cover"
