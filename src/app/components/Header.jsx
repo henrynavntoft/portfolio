@@ -15,9 +15,9 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: "02 Projects", path: "/projects" },
+    { name: "01 Projects", path: "/projects" },
     {
-      name: "04 Resume",
+      name: "02 Resume",
       path: "https://www.henrynavntoft.dk/Resume_Henry-Navntoft.pdf",
     },
   ];
