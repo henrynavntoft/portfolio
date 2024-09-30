@@ -8,7 +8,7 @@ export default function ProjectsSection() {
    {
   name: "Human Film",
   description: "A film production company based in Denmark. Built with Next.js and Tailwind CSS.",
-  link: "https://www.humanfilm.dk",
+  link: "https://human-film-l35r0ecce-henrynavntoft.vercel.app/",
   screenshot: "/human.png",
 },
 {
