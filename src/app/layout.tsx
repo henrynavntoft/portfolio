@@ -2,6 +2,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { Inter } from "next/font/google";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Head from "next/head";
 import { ReactNode } from "react";
@@ -30,7 +31,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body>
         <Providers>
           <Header />
-          {children}
+          <main>{children}</main>
+          <Footer />
         </Providers>
         <SpeedInsights />
       </body>
