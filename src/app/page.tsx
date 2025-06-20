@@ -1,6 +1,7 @@
 import ProjectsSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillsSection";
 import Hero from "./components/Hero";
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
@@ -9,10 +10,9 @@ export default function Home() {
       
       <SkillsSection />
       
-      <article className="mx-auto p-6 max-w-5xl">
-        <h3 className="mb-b">Projects</h3>
-        <ProjectsSection />
-      </article>
+      <ProjectsSection />
+
+      <Contact />
     </div>
   );
 }

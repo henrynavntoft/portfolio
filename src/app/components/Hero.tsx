@@ -96,21 +96,26 @@ export default function Hero() {
           HENRY NAVNTOFT
         </motion.h1>
         <motion.p
-          className="max-w-[600px] text-lg text-muted-foreground sm:text-xl mb-4"
+          className="max-w-[600px] text-lg text-muted-foreground sm:text-xl mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           Full Stack Developer & Small Business Owner
         </motion.p>
-        <motion.p
-          className="max-w-[700px] text-base text-muted-foreground/80 mb-8"
+        <motion.div
+          className="max-w-[800px] space-y-4 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Specializing in creating web solutions with WordPress, Shopify and custom coded solutions for businesses.
-        </motion.p>
+          <p className="text-base text-muted-foreground/90">
+            Building awesome digital solutions - Graduated at Copenhagen School of Arts and Technology in the summer of 2025.
+          </p>
+          <p className="text-sm text-muted-foreground/80">
+            From marketing to problem-solving - Specializing in WordPress, Shopify and custom web solutions.
+          </p>
+        </motion.div>
       </div>
     </div>
   )
