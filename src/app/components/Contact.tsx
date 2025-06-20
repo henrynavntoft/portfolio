@@ -66,7 +66,7 @@ export default function Contact() {
 
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-5 lg:py-20 bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -81,7 +81,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Contact Form */}
           <motion.div
             className="bg-muted/30 p-8 rounded-2xl border border-border/50"

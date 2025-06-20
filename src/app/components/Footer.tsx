@@ -40,7 +40,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t bg-background mt-10">
+    <footer className="border-t bg-background pt-5 lg:pt-10">
       <div className="container mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {/* Contact Information */}
@@ -64,16 +64,16 @@ export default function Footer() {
           </div>
 
           {/* Social Links */}
-          <div className="space-y-3 text-center">
+          <div className="space-y-3">
             <h3 className="text-sm font-semibold text-foreground mb-3">Connect with me</h3>
-            <div className="flex flex-col gap-2 items-center">
+            <div className="flex flex-col gap-2">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                  className="flex gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                   aria-label={social.name}
                 >
                   <social.icon className="h-4 w-4" />
