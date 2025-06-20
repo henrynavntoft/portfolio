@@ -77,7 +77,7 @@ export default function Contact() {
         >
           <h2 className="text-4xl font-bold text-foreground mb-4">Get In Touch</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to start your next project? Let's discuss how I can help bring your ideas to life.
+            Ready to start your next project? Let&apos;s discuss how I can help bring your ideas to life.
           </p>
         </motion.div>
 
@@ -100,7 +100,7 @@ export default function Contact() {
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
                 <h3 className="text-2xl font-semibold text-foreground mb-2">Message Sent!</h3>
                 <p className="text-muted-foreground">
-                  Thanks for reaching out. I'll get back to you as soon as possible.
+                  Thanks for reaching out. I&apos;ll get back to you as soon as possible.
                 </p>
               </motion.div>
             ) : (
@@ -140,7 +140,7 @@ export default function Contact() {
                     id="subject"
                     name="subject"
                     type="text"
-                    placeholder="What's this about?"
+                    placeholder="What&apos;s this about?"
                     value={formData.subject}
                     onChange={handleChange}
                     required
