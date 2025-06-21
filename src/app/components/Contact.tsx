@@ -1,12 +1,18 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Send, CheckCircle } from "lucide-react"
+import { Send, CheckCircle, Briefcase, DollarSign, Calendar, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function Contact() {
@@ -16,9 +22,29 @@ export default function Contact() {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
+    projectType: "",
+    budget: "medium",
+    timeline: "",
   })
+  const [projectBrief, setProjectBrief] = useState("")
   const { t } = useLanguage()
+
+  // Generate project brief automatically
+  useEffect(() => {
+    if (formData.projectType && formData.budget && formData.timeline) {
+      const projectTypeName = t(`contact.projectTypes.${formData.projectType}`)
+      const budgetRange = t(`contact.budgetRanges.${formData.budget}`)
+      const timelineText = t(`contact.timelineOptions.${formData.timeline}`)
+      
+      const brief = `${t('contact.projectBriefGenerated')}\n\n• ${t('contact.projectType')}: ${projectTypeName}\n• ${t('contact.budget')}: ${budgetRange}\n• ${t('contact.timeline')}: ${timelineText}\n\n${t('contact.projectBriefInfo')}`
+      
+      setProjectBrief(brief)
+      setFormData(prev => ({ ...prev, subject: `${projectTypeName} - ${budgetRange}` }))
+    } else {
+      setProjectBrief("")
+    }
+  }, [formData.projectType, formData.budget, formData.timeline, t])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -27,9 +53,19 @@ export default function Contact() {
     })
   }
 
+  const handleSelectChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }))
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    
+    // Include project brief in the message
+    const fullMessage = projectBrief ? `${projectBrief}\n\n--- Additional Details ---\n${formData.message}` : formData.message
     
     try {
       const response = await fetch('/api/send-email', {
@@ -41,7 +77,7 @@ export default function Contact() {
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
-          message: formData.message,
+          message: fullMessage,
         }),
       })
       
@@ -52,7 +88,8 @@ export default function Contact() {
         // Reset form after 3 seconds
         setTimeout(() => {
           setIsSubmitted(false)
-          setFormData({ name: "", email: "", subject: "", message: "" })
+          setFormData({ name: "", email: "", subject: "", message: "", projectType: "", budget: "medium", timeline: "" })
+          setProjectBrief("")
         }, 3000)
       } else {
         throw new Error(result.error || 'Failed to send message')
@@ -64,6 +101,10 @@ export default function Contact() {
       setIsSubmitting(false)
     }
   }
+
+  const projectTypes = ['wordpress', 'shopify', 'custom', 'redesign', 'maintenance', 'consulting']
+  const budgetRanges = ['small', 'medium', 'large', 'enterprise']
+  const timelineOptions = ['asap', 'week', 'month', 'quarter', 'flexible']
 
   return (
     <section id="contact" className="py-5 lg:py-20 bg-background">
@@ -82,7 +123,6 @@ export default function Contact() {
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
-          {/* Contact Form */}
           <motion.div
             className="bg-muted/30 p-8 rounded-2xl border border-border/50"
             initial={{ opacity: 0, y: 50 }}
@@ -105,6 +145,125 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Smart Project Form Section */}
+                <div className="space-y-6">
+                  <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                    <Briefcase className="w-5 h-5" />
+                    {t('contact.projectDetails')}
+                  </h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* Project Type Selector */}
+                    <div className="space-y-2">
+                      <Label htmlFor="projectType" className="flex items-center gap-2">
+                        <FileText className="w-4 h-4" />
+                        {t('contact.projectType')}
+                      </Label>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button 
+                            variant="outline" 
+                            className="w-full justify-between bg-background"
+                            type="button"
+                          >
+                            {formData.projectType ? t(`contact.projectTypes.${formData.projectType}`) : t('contact.projectTypePlaceholder')}
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="w-full">
+                          {projectTypes.map((type) => (
+                            <DropdownMenuItem 
+                              key={type}
+                              onClick={() => handleSelectChange('projectType', type)}
+                              className="cursor-pointer"
+                            >
+                              {t(`contact.projectTypes.${type}`)}
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </div>
+
+                    {/* Budget Range Selector */}
+                    <div className="space-y-2">
+                      <Label htmlFor="budget" className="flex items-center gap-2">
+                        <DollarSign className="w-4 h-4" />
+                        {t('contact.budget')}
+                      </Label>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button 
+                            variant="outline" 
+                            className="w-full justify-between bg-background"
+                            type="button"
+                          >
+                            {t(`contact.budgetRanges.${formData.budget}`)}
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="w-full">
+                          {budgetRanges.map((range) => (
+                            <DropdownMenuItem 
+                              key={range}
+                              onClick={() => handleSelectChange('budget', range)}
+                              className="cursor-pointer"
+                            >
+                              {t(`contact.budgetRanges.${range}`)}
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </div>
+
+                    {/* Timeline Selector */}
+                    <div className="space-y-2">
+                      <Label htmlFor="timeline" className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4" />
+                        {t('contact.timeline')}
+                      </Label>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button 
+                            variant="outline" 
+                            className="w-full justify-between bg-background"
+                            type="button"
+                          >
+                            {formData.timeline ? t(`contact.timelineOptions.${formData.timeline}`) : t('contact.timelinePlaceholder')}
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="w-full">
+                          {timelineOptions.map((option) => (
+                            <DropdownMenuItem 
+                              key={option}
+                              onClick={() => handleSelectChange('timeline', option)}
+                              className="cursor-pointer"
+                            >
+                              {t(`contact.timelineOptions.${option}`)}
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </div>
+                  </div>
+
+                  {/* Auto-generated Project Brief */}
+                  {projectBrief && (
+                    <motion.div
+                      className="p-4 bg-primary/10 rounded-lg border border-border/50"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <h4 className="font-medium text-foreground mb-2 flex items-center gap-2">
+                        <FileText className="w-4 h-4" />
+                        {t('contact.projectBrief')}
+                      </h4>
+                      <pre className="text-sm text-muted-foreground whitespace-pre-wrap font-sans">
+                        {projectBrief}
+                      </pre>
+                    </motion.div>
+                  )}
+                </div>
+
+                {/* Traditional Contact Form Fields */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">{t('contact.name')}</Label>

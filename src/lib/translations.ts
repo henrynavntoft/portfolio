@@ -34,7 +34,38 @@ export const translations = {
       sendButton: "Send Message",
       sending: "Sending...",
       success: "Message Sent!",
-      successMessage: "Thanks for reaching out. I'll get back to you as soon as possible."
+      successMessage: "Thanks for reaching out. I'll get back to you as soon as possible.",
+      projectDetails: "Project Details",
+      // Smart form fields
+      projectType: "Project Type",
+      projectTypePlaceholder: "Type?",
+      budget: "Budget Range",
+      timeline: "Timeline",
+      timelinePlaceholder: "When?",
+      projectBrief: "Project Brief",
+      projectBriefGenerated: "Based on your selections, here's what I understand about your project:",
+      projectBriefInfo: "Please provide more details about your specific requirements in the message field below.",
+      projectTypes: {
+        wordpress: "WordPress",
+        shopify: "Shopify",
+        custom: "Custom",
+        redesign: "Redesign",
+        maintenance: "Maintenance",
+        consulting: "Consulting"
+      },
+      budgetRanges: {
+        small: "€500 - €1,000",
+        medium: "€1,000 - €2,000", 
+        large: "€2,000 - €3,000",
+        enterprise: "€3,000+"
+      },
+      timelineOptions: {
+        asap: "ASAP (Rush job)",
+        week: "Within 1 week",
+        month: "Within 1 month",
+        quarter: "Within 3 months",
+        flexible: "I'm flexible"
+      }
     },
     // Skills section
     skills: {
@@ -97,7 +128,38 @@ export const translations = {
       sendButton: "Send Besked",
       sending: "Sender...",
       success: "Besked Sendt!",
-      successMessage: "Tak fordi du tog kontakt. Jeg vender tilbage så hurtigt som muligt."
+      successMessage: "Tak fordi du tog kontakt. Jeg vender tilbage så hurtigt som muligt.",
+      // Smart form fields
+      projectDetails: "Projekt Detaljer",
+      projectType: "Projekttype",
+      projectTypePlaceholder: "Vælg din projekttype",
+      budget: "Budget",
+      timeline: "Tidsramme",
+      timelinePlaceholder: "Hvornår?",
+      projectBrief: "Projektbeskrivelse",
+      projectBriefGenerated: "Baseret på dine valg, forstår jeg følgende om dit projekt:",
+      projectBriefInfo: "Fortæl mig mere om dine specifikke krav i beskedfeltet nedenfor.",
+      projectTypes: {
+        wordpress: "WordPress",
+        shopify: "Shopify",
+        custom: "Custom Development",
+        redesign: "Redesign",
+        maintenance: "Vedligeholdelse",
+        consulting: "Konsulent"
+      },
+      budgetRanges: {
+        small: "5.000 - 10.000 kr.",
+        medium: "10.000 - 20.000 kr.", 
+        large: "20.000 - 30.000 kr.",
+        enterprise: "30.000 kr.+"
+      },
+      timelineOptions: {
+        asap: "Så hurtigt som muligt",
+        week: "Inden for 1 uge",
+        month: "Inden for 1 måned",
+        quarter: "Inden for 3 måneder",
+        flexible: "Jeg er fleksibel"
+      }
     },
     // Skills section
     skills: {
