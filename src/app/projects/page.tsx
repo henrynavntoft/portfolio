@@ -89,7 +89,7 @@ export default function ProjectsPage() {
             My Web Development Projects
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A showcase of websites and web applications I've built for clients across Denmark. 
+            A showcase of websites and web applications I&apos;ve built for clients across Denmark. 
             From e-commerce stores to corporate websites, each project demonstrates my expertise 
             in modern web development technologies.
           </p>

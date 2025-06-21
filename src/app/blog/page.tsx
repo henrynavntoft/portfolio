@@ -35,7 +35,7 @@ export default function BlogPage() {
           <div className="p-8 bg-muted/30 rounded-lg">
             <h2 className="text-2xl font-semibold mb-4">Coming Soon!</h2>
             <p className="text-muted-foreground mb-6">
-              I'm preparing valuable content about web development, WordPress optimization, 
+              I&apos;m preparing valuable content about web development, WordPress optimization, 
               Shopify best practices, and small business digital strategies.
             </p>
             <p className="text-sm text-muted-foreground">
