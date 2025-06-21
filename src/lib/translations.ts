@@ -91,6 +91,18 @@ export const translations = {
       allRightsReserved: "All rights reserved.",
       email: "Email",
       phone: "Phone"
+    },
+    // Cookie consent
+    cookies: {
+      title: "Cookie Consent",
+      message: "This website uses cookies to improve your experience and analyze traffic. We use Google Analytics to understand how visitors interact with our site.",
+      necessary: "Necessary cookies are required for basic site functionality.",
+      analytics: "Analytics cookies help us understand how you use our website.",
+      acceptAll: "Accept All",
+      acceptNecessary: "Accept Necessary Only",
+      customize: "Cookie Settings",
+      save: "Save Preferences",
+      learnMore: "Learn More"
     }
   },
   da: {
@@ -185,6 +197,18 @@ export const translations = {
       allRightsReserved: "Alle rettigheder forbeholdes.",
       email: "E-mail",
       phone: "Telefon"
+    },
+    // Cookie consent
+    cookies: {
+      title: "Cookie Samtykke",
+      message: "Denne hjemmeside bruger cookies for at forbedre din oplevelse og analysere trafik. Vi bruger Google Analytics til at forstå, hvordan besøgende interagerer med vores site.",
+      necessary: "Nødvendige cookies er påkrævet for grundlæggende sidefunktionalitet.",
+      analytics: "Analyse cookies hjælper os med at forstå, hvordan du bruger vores hjemmeside.",
+      acceptAll: "Accepter Alle",
+      acceptNecessary: "Accepter Kun Nødvendige",
+      customize: "Cookie Indstillinger",
+      save: "Gem Præferencer",
+      learnMore: "Læs Mere"
     }
   }
 };

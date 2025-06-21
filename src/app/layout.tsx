@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LanguageLoaderWrapper from "./components/LanguageLoaderWrapper";
 import CustomCursor from "./components/CustomCursor";
+import CookieConsent from "./components/CookieConsent";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ReactNode } from "react";
 import { Metadata } from 'next';
@@ -144,7 +145,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body>
-        {/* Google Analytics */}
+        {/* Google Analytics with Consent Mode */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XB83SMWP2T"
           strategy="afterInteractive"
@@ -154,6 +155,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            
+            // Default consent state (denied)
+            gtag('consent', 'default', {
+              analytics_storage: 'denied'
+            });
+            
             gtag('config', 'G-XB83SMWP2T');
           `}
         </Script>
@@ -164,6 +171,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Header />
           <main>{children}</main>
           <Footer />
+          <CookieConsent />
         </Providers>
         <SpeedInsights />
       </body>
