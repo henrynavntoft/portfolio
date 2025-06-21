@@ -12,6 +12,7 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://henrynavntoft.dk'),
   title: "Henry Navntoft | Full Stack Developer & Small Business Owner",
   description: "Henry Navntoft - Full Stack Developer specializing in WordPress, Shopify, and custom web solutions. Based in Copenhagen, Denmark. Available for web development projects.",
   keywords: [
