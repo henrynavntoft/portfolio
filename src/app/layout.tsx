@@ -8,6 +8,7 @@ import CustomCursor from "./components/CustomCursor";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ReactNode } from "react";
 import { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: "Henry Navntoft | Full Stack Developer & Small Business Owner",
@@ -143,6 +144,20 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XB83SMWP2T"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XB83SMWP2T');
+          `}
+        </Script>
+
         <Providers>
           <CustomCursor />
           <LanguageLoaderWrapper />
