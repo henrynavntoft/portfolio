@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -17,6 +18,7 @@ export default function Contact() {
     subject: "",
     message: ""
   })
+  const { t } = useLanguage()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -63,8 +65,6 @@ export default function Contact() {
     }
   }
 
-
-
   return (
     <section id="contact" className="py-5 lg:py-20 bg-background">
       <div className="container mx-auto px-6">
@@ -75,9 +75,9 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-foreground mb-4">Get In Touch</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4">{t('contact.title')}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to start your next project? Let&apos;s discuss how I can help bring your ideas to life.
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -98,21 +98,21 @@ export default function Contact() {
                 transition={{ duration: 0.5 }}
               >
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-semibold text-foreground mb-2">Message Sent!</h3>
+                <h3 className="text-2xl font-semibold text-foreground mb-2">{t('contact.success')}</h3>
                 <p className="text-muted-foreground">
-                  Thanks for reaching out. I&apos;ll get back to you as soon as possible.
+                  {t('contact.successMessage')}
                 </p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
+                    <Label htmlFor="name">{t('contact.name')}</Label>
                     <Input
                       id="name"
                       name="name"
                       type="text"
-                      placeholder="Your name"
+                      placeholder={t('contact.namePlaceholder')}
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -120,12 +120,12 @@ export default function Contact() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">{t('contact.email')}</Label>
                     <Input
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="your@email.com"
+                      placeholder={t('contact.emailPlaceholder')}
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -135,12 +135,12 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
+                  <Label htmlFor="subject">{t('contact.subject')}</Label>
                   <Input
                     id="subject"
                     name="subject"
                     type="text"
-                    placeholder="What&apos;s this about?"
+                    placeholder={t('contact.subjectPlaceholder')}
                     value={formData.subject}
                     onChange={handleChange}
                     required
@@ -149,11 +149,11 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message">{t('contact.message')}</Label>
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Tell me about your project..."
+                    placeholder={t('contact.messagePlaceholder')}
                     value={formData.message}
                     onChange={handleChange}
                     required
@@ -171,12 +171,12 @@ export default function Contact() {
                   {isSubmitting ? (
                     <>
                       <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
-                      Sending...
+                      {t('contact.sending')}
                     </>
                   ) : (
                     <>
                       <Send className="w-4 h-4 mr-2" />
-                      Send Message
+                      {t('contact.sendButton')}
                     </>
                   )}
                 </Button>

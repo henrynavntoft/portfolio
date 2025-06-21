@@ -1,9 +1,11 @@
 "use client";
 
 import { Github, Linkedin, Mail, Phone, Building2 } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   const socialLinks = [
     {
@@ -21,13 +23,13 @@ export default function Footer() {
   const contactInfo = [
     {
       icon: Mail,
-      label: "Email",
+      label: t('footer.email'),
       value: "henrylnavntoft@gmail.com",
       href: "mailto:henrylnavntoft@gmail.com",
     },
     {
       icon: Phone,
-      label: "Phone",
+      label: t('footer.phone'),
       value: "+45 51982345",
       href: "tel:+4551982345",
     },
@@ -45,7 +47,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {/* Contact Information */}
           <div className="space-y-3">
-            <h3 className="text-sm font-semibold text-foreground mb-3">Contact Information</h3>
+            <h3 className="text-sm font-semibold text-foreground mb-3">{t('footer.contactInfo')}</h3>
             {contactInfo.map((contact) => (
               <div key={contact.label} className="flex items-center gap-2">
                 <contact.icon className="h-4 w-4 text-primary" />
@@ -65,7 +67,7 @@ export default function Footer() {
 
           {/* Social Links */}
           <div className="space-y-3">
-            <h3 className="text-sm font-semibold text-foreground mb-3">Connect with me</h3>
+            <h3 className="text-sm font-semibold text-foreground mb-3">{t('footer.connectWith')}</h3>
             <div className="flex flex-col gap-2">
               {socialLinks.map((social) => (
                 <a
@@ -89,7 +91,7 @@ export default function Footer() {
               © {currentYear} Henry Navntoft
             </p>
             <p className="text-xs text-muted-foreground/80 mt-1">
-              All rights reserved.
+              {t('footer.allRightsReserved')}
             </p>
           </div>
         </div>

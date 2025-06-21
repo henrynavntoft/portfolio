@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function SkillsSection() {
+  const { t } = useLanguage();
+  
   const skills = [
     "JavaScript",
     "React", 
@@ -32,9 +35,9 @@ export default function SkillsSection() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl font-bold text-foreground mb-4">Skills</h2>
+        <h2 className="text-4xl font-bold text-foreground mb-4">{t('skills.title')}</h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Technologies and tools I work with to create exceptional digital experiences.
+          {t('skills.subtitle')}
         </p>
       </motion.div>
 

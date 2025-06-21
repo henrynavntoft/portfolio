@@ -2,9 +2,11 @@
 
 import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     if (!canvasRef.current) return
@@ -86,14 +88,14 @@ export default function Hero() {
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full bg-background" />
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <motion.h1
           className="mb-6 text-6xl font-bold tracking-tighter sm:text-7xl lg:text-8xl text-foreground"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          HENRY NAVNTOFT
+          {t('hero.title')}
         </motion.h1>
         <motion.p
           className="max-w-[600px] text-lg text-muted-foreground sm:text-xl mb-6"
@@ -101,7 +103,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Full Stack Developer & Small Business Owner
+          {t('hero.subtitle')}
         </motion.p>
         <motion.div
           className="max-w-[800px] space-y-4 text-center"
@@ -110,10 +112,10 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <p className="text-base text-muted-foreground/90">
-            Building awesome digital solutions - Graduated at Copenhagen School of Arts and Technology in the summer of 2025.
+            {t('hero.description')}
           </p>
           <p className="text-sm text-muted-foreground/80">
-            From marketing to problem-solving - Specializing in WordPress, Shopify and custom web solutions.
+            {t('hero.specialization')}
           </p>
         </motion.div>
       </div>

@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { Menu, Moon, Sun, Monitor, ExternalLink, Check, Linkedin, Github } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSelector from './LanguageSelector';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -14,12 +16,13 @@ import {
 
 export default function Header() {
     const { theme, setTheme } = useTheme();
+    const { t } = useLanguage();
 
     const menuItems = [
-        { name: "Home", path: "/" },
-        { name: "Projects", path: "/projects" },
+        { name: t('nav.home'), path: "/" },
+        { name: t('nav.projects'), path: "/projects" },
         {
-            name: "Resume",
+            name: t('nav.resume'),
             path: "https://www.henrynavntoft.dk/Resume_Henry-Navntoft.pdf",
             external: true
         },
@@ -49,6 +52,8 @@ export default function Header() {
                     </Link>
 
                     <div className="flex items-center gap-4">
+                        <LanguageSelector />
+                        
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <button className="">
@@ -56,7 +61,7 @@ export default function Header() {
                                 </button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end" className="w-48">
-                                <DropdownMenuLabel className="text-xs text-muted-foreground">Navigation</DropdownMenuLabel>
+                                <DropdownMenuLabel className="text-xs text-muted-foreground">{t('nav.navigation')}</DropdownMenuLabel>
                                 {menuItems.map((item, index) => (
                                     <DropdownMenuItem key={`${item.name}-${index}`} asChild>
                                         <Link 
@@ -73,26 +78,26 @@ export default function Header() {
 
                                 <DropdownMenuSeparator />
 
-                                <DropdownMenuLabel className="text-xs text-muted-foreground">Theme</DropdownMenuLabel>
+                                <DropdownMenuLabel className="text-xs text-muted-foreground">{t('nav.theme')}</DropdownMenuLabel>
                                 <DropdownMenuItem onClick={() => setTheme("light")} className="cursor-pointer flex items-center gap-2">
                                     <Sun className="h-4 w-4" />
-                                    <span>Light</span>
+                                    <span>{t('nav.light')}</span>
                                     {theme === "light" && <span className="ml-auto text-primary"><Check className="h-4 w-4" /></span>}
                                 </DropdownMenuItem>
                                 <DropdownMenuItem onClick={() => setTheme("dark")} className="cursor-pointer flex items-center gap-2">
                                     <Moon className="h-4 w-4" />
-                                    <span>Dark</span>
+                                    <span>{t('nav.dark')}</span>
                                     {theme === "dark" && <span className="ml-auto text-primary"><Check className="h-4 w-4" /></span>}
                                 </DropdownMenuItem>
                                 <DropdownMenuItem onClick={() => setTheme("system")} className="cursor-pointer flex items-center gap-2">
                                     <Monitor className="h-4 w-4" />
-                                    <span>System</span>
+                                    <span>{t('nav.system')}</span>
                                     {theme === "system" && <span className="ml-auto text-primary"><Check className="h-4 w-4" /></span>}
                                 </DropdownMenuItem>
 
                                 <DropdownMenuSeparator />
 
-                                <DropdownMenuLabel className="text-xs text-muted-foreground">Social</DropdownMenuLabel>
+                                <DropdownMenuLabel className="text-xs text-muted-foreground">{t('nav.social')}</DropdownMenuLabel>
                                 {socialLinks.map((social, index) => (
                                     <DropdownMenuItem key={`${social.name}-${index}`} asChild>
                                         <Link 

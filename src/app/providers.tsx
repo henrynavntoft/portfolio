@@ -1,7 +1,8 @@
 "use client";
 
-import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { ThemeProvider } from "next-themes";
 import { ReactNode } from "react";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 interface ProvidersProps {
   children: ReactNode;
@@ -9,14 +10,15 @@ interface ProvidersProps {
 
 export function Providers({ children }: ProvidersProps) {
   return (
-    <NextThemesProvider 
-      attribute="class" 
-      defaultTheme="dark"
-      enableSystem={true}
-      storageKey="theme"
-      disableTransitionOnChange={false}
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
     >
-      {children}
-    </NextThemesProvider>
+      <LanguageProvider>
+        {children}
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
