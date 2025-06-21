@@ -2,6 +2,7 @@
 
 import { Github, Linkedin, Mail, Phone, Building2 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -52,12 +53,12 @@ export default function Footer() {
               <div key={contact.label} className="flex items-center gap-2">
                 <contact.icon className="h-4 w-4 text-primary" />
                 {contact.href ? (
-                  <a
+                  <Link
                     href={contact.href}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     {contact.value}
-                  </a>
+                  </Link>
                 ) : (
                   <span className="text-sm text-muted-foreground">{contact.value}</span>
                 )}
@@ -70,7 +71,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-foreground mb-3">{t('footer.connectWith')}</h3>
             <div className="flex flex-col gap-2">
               {socialLinks.map((social) => (
-                <a
+                <Link
                   key={social.name}
                   href={social.href}
                   target="_blank"
@@ -80,7 +81,7 @@ export default function Footer() {
                 >
                   <social.icon className="h-4 w-4" />
                   {social.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

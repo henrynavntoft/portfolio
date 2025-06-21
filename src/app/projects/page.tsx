@@ -1,5 +1,6 @@
 import ProjectsSection from "../components/ProjectSection"
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "Projects | Henry Navntoft - WordPress, Shopify & Custom Development Portfolio",
@@ -98,7 +99,7 @@ export default function ProjectsPage() {
         <div className="text-center">
           <p className="text-muted-foreground mb-8">
             Detailed project showcase coming soon. In the meantime, you can view my work 
-            on the <a href="/" className="text-primary hover:underline">homepage</a> or 
+            on the <Link href="/" className="text-primary hover:underline">homepage</Link> or 
             contact me directly to discuss your project needs.
           </p>
           
