@@ -20,7 +20,6 @@ export default function Header() {
 
     const menuItems = [
         { name: t('nav.home'), path: "/" },
-        { name: t('nav.projects'), path: "/projects" },
         {
             name: t('nav.resume'),
             path: "https://www.henrynavntoft.dk/Resume_Henry-Navntoft.pdf",

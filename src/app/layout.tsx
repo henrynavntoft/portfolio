@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LanguageLoaderWrapper from "./components/LanguageLoaderWrapper";
-import CustomCursor from "./components/CustomCursor";
 import CookieConsent from "./components/CookieConsent";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ReactNode } from "react";
@@ -167,7 +166,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </Script>
 
         <Providers>
-          <CustomCursor />
+          
           <LanguageLoaderWrapper />
           <Header />
           <main>{children}</main>
