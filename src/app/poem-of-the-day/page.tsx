@@ -41,7 +41,7 @@ export default function PoemOfTheDayPage() {
   if (loading) {
     return (
       <div className="flex min-h-[calc(100vh-theme(spacing.16))] flex-col items-center justify-center py-12 px-6 sm:px-8 lg:px-12">
-        <p className="text-xl text-muted-foreground">Loading today's poem...</p>
+        <p className="text-xl text-muted-foreground">Loading today&apos;s poem...</p>
       </div>
     );
   }
