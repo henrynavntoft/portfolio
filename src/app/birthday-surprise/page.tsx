@@ -57,8 +57,8 @@ export default function BirthdaySurprise() {
           </h1>
           
           <p className="text-lg md:text-xl text-[#201e1f]/80 max-w-3xl mx-auto">
-            I couldn't find any pillows for the sofa, but I made these vouchers instead. <br />
-            So, let's go shopping for pillows, have a nice dinner and go to the spa!
+            I couldn&apos;t find any pillows for the sofa, but I made these vouchers instead. <br />
+            So, let&apos;s go shopping for pillows, have a nice dinner and go to the spa!
           </p>
         </motion.div>
 
