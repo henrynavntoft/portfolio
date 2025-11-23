@@ -4,8 +4,9 @@ export const translations = {
     hero: {
       title: "HENRY NAVNTOFT",
       subtitle: "Full Stack Developer & Small Business Owner",
-      description: "Building awesome digital solutions - Graduated at Copenhagen School of Arts and Technology in the summer of 2025.",
-      specialization: "From marketing to problem-solving - Specializing in WordPress, Shopify and custom web solutions."
+      description: "Helping businesses create digital solutions that work.",
+      specialization:
+        "From complex web applications to e-commerce solutions - specializing in Shopify and custom full-stack projects with modern technologies.",
     },
     // Navigation
     nav: {
@@ -17,12 +18,13 @@ export const translations = {
       social: "Social",
       light: "Light",
       dark: "Dark",
-      system: "System"
+      system: "System",
     },
     // Contact section
     contact: {
       title: "Get In Touch",
-      subtitle: "Ready to start your next project? Let's discuss how I can help bring your ideas to life.",
+      subtitle:
+        "Ready to start your next project? Let's discuss how I can help bring your ideas to life.",
       name: "Name",
       email: "Email",
       subject: "Subject",
@@ -34,7 +36,8 @@ export const translations = {
       sendButton: "Send Message",
       sending: "Sending...",
       success: "Message Sent!",
-      successMessage: "Thanks for reaching out. I'll get back to you as soon as possible.",
+      successMessage:
+        "Thanks for reaching out. I'll get back to you as soon as possible.",
       projectDetails: "Project Details",
       // Smart form fields
       projectType: "Project Type",
@@ -43,34 +46,37 @@ export const translations = {
       timeline: "Timeline",
       timelinePlaceholder: "When?",
       projectBrief: "Project Brief",
-      projectBriefGenerated: "Based on your selections, here's what I understand about your project:",
-      projectBriefInfo: "Please provide more details about your specific requirements in the message field below.",
+      projectBriefGenerated:
+        "Based on your selections, here's what I understand about your project:",
+      projectBriefInfo:
+        "Please provide more details about your specific requirements in the message field below.",
       projectTypes: {
         wordpress: "WordPress",
         shopify: "Shopify",
         custom: "Custom",
         redesign: "Redesign",
         maintenance: "Maintenance",
-        consulting: "Consulting"
+        consulting: "Consulting",
       },
       budgetRanges: {
         small: "€500 - €1,000",
-        medium: "€1,000 - €2,000", 
+        medium: "€1,000 - €2,000",
         large: "€2,000 - €3,000",
-        enterprise: "€3,000+"
+        enterprise: "€3,000+",
       },
       timelineOptions: {
         asap: "ASAP (Rush job)",
         week: "Within 1 week",
         month: "Within 1 month",
         quarter: "Within 3 months",
-        flexible: "I'm flexible"
-      }
+        flexible: "I'm flexible",
+      },
     },
     // Skills section
     skills: {
       title: "Skills",
-      subtitle: "Technologies and tools I work with to create exceptional digital experiences."
+      subtitle:
+        "Technologies and tools I work with to create exceptional digital experiences.",
     },
     // Projects section
     projects: {
@@ -78,11 +84,14 @@ export const translations = {
       subtitle: "A showcase of my recent work and creative solutions.",
       viewProject: "View Project",
       descriptions: {
-        chicura: "A Danish e-commerce store specializing in posters, frames, and home decor accessories. Built with Shopify and custom integrations.",
-        human: "A film production company based in Denmark. Built with Next.js and Tailwind CSS.",
-        toptronic: "A Danish electronics company specializing in EMI Shielding, Thermal Products, and Microwave Products. Built with WordPress and custom solutions.",
-        rose: "An industrial fastener solutions provider based in Denmark. Built with WordPress and Elementor."
-      }
+        chicura:
+          "A Danish e-commerce store specializing in posters, frames, and home decor accessories. Built with Shopify and custom integrations.",
+        human:
+          "A film production company based in Denmark. Built with Next.js and Tailwind CSS.",
+        toptronic:
+          "A Danish electronics company specializing in EMI Shielding, Thermal Products, and Microwave Products. Built with WordPress and custom solutions.",
+        rose: "An industrial fastener solutions provider based in Denmark. Built with WordPress and Elementor.",
+      },
     },
     // Footer section
     footer: {
@@ -90,28 +99,32 @@ export const translations = {
       connectWith: "Connect with me",
       allRightsReserved: "All rights reserved.",
       email: "Email",
-      phone: "Phone"
+      phone: "Phone",
     },
     // Cookie consent
     cookies: {
       title: "Cookie Consent",
-      message: "This website uses cookies to improve your experience and analyze traffic. We use Google Analytics to understand how visitors interact with our site.",
+      message:
+        "This website uses cookies to improve your experience and analyze traffic. We use Google Analytics to understand how visitors interact with our site.",
       necessary: "Necessary cookies are required for basic site functionality.",
-      analytics: "Analytics cookies help us understand how you use our website.",
+      analytics:
+        "Analytics cookies help us understand how you use our website.",
       acceptAll: "Accept All",
       acceptNecessary: "Accept Necessary Only",
       customize: "Cookie Settings",
       save: "Save Preferences",
-      learnMore: "Learn More"
-    }
+      learnMore: "Learn More",
+    },
   },
   da: {
     // Hero section
     hero: {
       title: "HENRY NAVNTOFT",
       subtitle: "Full Stack Udvikler",
-      description: "Bygger fantastiske digitale løsninger - Dimitteret fra Københavns Erhvervsakademi sommeren 2025.",
-      specialization: "Fra marketing til problemløsning - Specialiseret i WordPress, Shopify og skræddersyede webløsninger."
+      description:
+        "Hjælper virksomheder med at skabe digitale løsninger der virker.",
+      specialization:
+        "Fra komplekse webapplikationer til e-commerce løsninger - specialiseret i Shopify og skræddersyede full-stack projekter med moderne teknologier.",
     },
     // Navigation
     nav: {
@@ -123,12 +136,13 @@ export const translations = {
       social: "Sociale medier",
       light: "Lys",
       dark: "Mørk",
-      system: "System"
+      system: "System",
     },
     // Contact section
     contact: {
       title: "Kontakt",
-      subtitle: "Klar til at starte dit næste projekt? Lad os diskutere, hvordan jeg kan hjælpe med at realisere dine idéer.",
+      subtitle:
+        "Klar til at starte dit næste projekt? Lad os diskutere, hvordan jeg kan hjælpe med at realisere dine idéer.",
       name: "Navn",
       email: "E-mail",
       subject: "Emne",
@@ -140,7 +154,8 @@ export const translations = {
       sendButton: "Send Besked",
       sending: "Sender...",
       success: "Besked Sendt!",
-      successMessage: "Tak fordi du tog kontakt. Jeg vender tilbage så hurtigt som muligt.",
+      successMessage:
+        "Tak fordi du tog kontakt. Jeg vender tilbage så hurtigt som muligt.",
       // Smart form fields
       projectDetails: "Projekt Detaljer",
       projectType: "Projekttype",
@@ -149,34 +164,37 @@ export const translations = {
       timeline: "Tidsramme",
       timelinePlaceholder: "Hvornår?",
       projectBrief: "Projektbeskrivelse",
-      projectBriefGenerated: "Baseret på dine valg, forstår jeg følgende om dit projekt:",
-      projectBriefInfo: "Fortæl mig mere om dine specifikke krav i beskedfeltet nedenfor.",
+      projectBriefGenerated:
+        "Baseret på dine valg, forstår jeg følgende om dit projekt:",
+      projectBriefInfo:
+        "Fortæl mig mere om dine specifikke krav i beskedfeltet nedenfor.",
       projectTypes: {
         wordpress: "WordPress",
         shopify: "Shopify",
         custom: "Custom Development",
         redesign: "Redesign",
         maintenance: "Vedligeholdelse",
-        consulting: "Konsulent"
+        consulting: "Konsulent",
       },
       budgetRanges: {
         small: "5.000 - 10.000 kr.",
-        medium: "10.000 - 20.000 kr.", 
+        medium: "10.000 - 20.000 kr.",
         large: "20.000 - 30.000 kr.",
-        enterprise: "30.000 kr.+"
+        enterprise: "30.000 kr.+",
       },
       timelineOptions: {
         asap: "Så hurtigt som muligt",
         week: "Inden for 1 uge",
         month: "Inden for 1 måned",
         quarter: "Inden for 3 måneder",
-        flexible: "Jeg er fleksibel"
-      }
+        flexible: "Jeg er fleksibel",
+      },
     },
     // Skills section
     skills: {
       title: "Færdigheder",
-      subtitle: "Teknologier og værktøjer jeg bruger til at skabe exceptionelle digitale oplevelser."
+      subtitle:
+        "Teknologier og værktøjer jeg bruger til at skabe exceptionelle digitale oplevelser.",
     },
     // Projects section
     projects: {
@@ -184,11 +202,14 @@ export const translations = {
       subtitle: "Et showcase af mit seneste arbejde og kreative løsninger.",
       viewProject: "Se Projekt",
       descriptions: {
-        chicura: "En dansk e-handelsbutik specialiseret i plakater, rammer og boligindretning. Bygget med Shopify og skræddersyede integrationer.",
-        human: "Et filmproduktionsselskab baseret i Danmark. Bygget med Next.js og Tailwind CSS.",
-        toptronic: "En dansk elektronikvirksomhed specialiseret i EMI Shielding, Termiske Produkter og Mikrobølgeprodukter. Bygget med WordPress og skræddersyede løsninger.",
-        rose: "En leverandør af industrielle fastgørelsesløsninger baseret i Danmark. Bygget med WordPress og Elementor."
-      }
+        chicura:
+          "En dansk e-handelsbutik specialiseret i plakater, rammer og boligindretning. Bygget med Shopify og skræddersyede integrationer.",
+        human:
+          "Et filmproduktionsselskab baseret i Danmark. Bygget med Next.js og Tailwind CSS.",
+        toptronic:
+          "En dansk elektronikvirksomhed specialiseret i EMI Shielding, Termiske Produkter og Mikrobølgeprodukter. Bygget med WordPress og skræddersyede løsninger.",
+        rose: "En leverandør af industrielle fastgørelsesløsninger baseret i Danmark. Bygget med WordPress og Elementor.",
+      },
     },
     // Footer section
     footer: {
@@ -196,22 +217,25 @@ export const translations = {
       connectWith: "Socials",
       allRightsReserved: "Alle rettigheder forbeholdes.",
       email: "E-mail",
-      phone: "Telefon"
+      phone: "Telefon",
     },
     // Cookie consent
     cookies: {
       title: "Cookie Samtykke",
-      message: "Denne hjemmeside bruger cookies for at forbedre din oplevelse og analysere trafik. Vi bruger Google Analytics til at forstå, hvordan besøgende interagerer med vores site.",
-      necessary: "Nødvendige cookies er påkrævet for grundlæggende sidefunktionalitet.",
-      analytics: "Analyse cookies hjælper os med at forstå, hvordan du bruger vores hjemmeside.",
+      message:
+        "Denne hjemmeside bruger cookies for at forbedre din oplevelse og analysere trafik. Vi bruger Google Analytics til at forstå, hvordan besøgende interagerer med vores site.",
+      necessary:
+        "Nødvendige cookies er påkrævet for grundlæggende sidefunktionalitet.",
+      analytics:
+        "Analyse cookies hjælper os med at forstå, hvordan du bruger vores hjemmeside.",
       acceptAll: "Accepter Alle",
       acceptNecessary: "Accepter Kun Nødvendige",
       customize: "Cookie Indstillinger",
       save: "Gem Præferencer",
-      learnMore: "Læs Mere"
-    }
-  }
+      learnMore: "Læs Mere",
+    },
+  },
 };
 
-export type Language = 'en' | 'da';
-export type TranslationKey = keyof typeof translations.en; 
+export type Language = "en" | "da";
+export type TranslationKey = keyof typeof translations.en;
