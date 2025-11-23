@@ -109,7 +109,7 @@ export const translations = {
     // Hero section
     hero: {
       title: "HENRY NAVNTOFT",
-      subtitle: "Full Stack Udvikler & Selvstændig",
+      subtitle: "Full Stack Udvikler",
       description: "Bygger fantastiske digitale løsninger - Dimitteret fra Københavns Erhvervsakademi sommeren 2025.",
       specialization: "Fra marketing til problemløsning - Specialiseret i WordPress, Shopify og skræddersyede webløsninger."
     },
