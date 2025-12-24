@@ -1,8 +1,10 @@
 import "./globals.css";
 import { Providers } from "./providers";
 import { Inter } from "next/font/google";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import {
+  ConditionalHeader,
+  ConditionalFooter,
+} from "./components/ConditionalHeaderFooter";
 import LanguageLoaderWrapper from "./components/LanguageLoaderWrapper";
 import CookieConsent from "./components/CookieConsent";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -186,9 +188,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
         <Providers>
           <LanguageLoaderWrapper />
-          <Header />
+          <ConditionalHeader />
           <main>{children}</main>
-          <Footer />
+          <ConditionalFooter />
           <CookieConsent />
           <Analytics />
         </Providers>
