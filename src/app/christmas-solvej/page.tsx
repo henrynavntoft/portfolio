@@ -135,7 +135,7 @@ export default function ChristmasSolvej() {
                 Merry Christmas Sol! 🎄
               </h1>
               <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-                Even though you're far away in Hanoi, Toni and I we wanted to
+                Even though youre far away in Hanoi, Toni and I we wanted to
                 give you something special for Christmas.
               </p>
             </div>
@@ -182,7 +182,7 @@ export default function ChristmasSolvej() {
             {/* Footer Message */}
             <div className="text-center">
               <p className="text-base text-muted-foreground mb-3">
-                Hope you're having an amazing time in Hanoi!
+                Hope youre having an amazing time in Hanoi!
               </p>
               <p className="text-base font-medium text-foreground">
                 Love, Henry & Antonia ❤️
