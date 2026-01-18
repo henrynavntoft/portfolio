@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Mail, Phone, Building2 } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, Building2, Globe } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Link from 'next/link';
 
@@ -18,6 +18,11 @@ export default function Footer() {
       name: "GitHub", 
       href: "https://github.com/henrynavntoft",
       icon: Github,
+    },
+    {
+      name: "HELUNA",
+      href: "https://www.heluna.xyz/",
+      icon: Globe,
     },
   ];
 
