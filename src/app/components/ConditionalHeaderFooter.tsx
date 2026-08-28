@@ -4,11 +4,16 @@ import { usePathname } from "next/navigation";
 import Header from "./Header";
 import Footer from "./Footer";
 
+function isStandalonePage(pathname: string) {
+  return (
+    pathname === "/christmas-solvej" || pathname.startsWith("/gift/")
+  );
+}
+
 export function ConditionalHeader() {
   const pathname = usePathname();
-  const hideOnChristmasPage = pathname === "/christmas-solvej";
 
-  if (hideOnChristmasPage) {
+  if (isStandalonePage(pathname)) {
     return null;
   }
 
@@ -17,9 +22,8 @@ export function ConditionalHeader() {
 
 export function ConditionalFooter() {
   const pathname = usePathname();
-  const hideOnChristmasPage = pathname === "/christmas-solvej";
 
-  if (hideOnChristmasPage) {
+  if (isStandalonePage(pathname)) {
     return null;
   }
 
