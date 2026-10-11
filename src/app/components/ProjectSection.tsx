@@ -37,7 +37,7 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <article className="mx-auto px-6 py-10 lg:py-20 max-w-5xl">
+    <article id="projects" className="scroll-mt-28 mx-auto px-6 py-10 lg:py-20 max-w-5xl">
       <motion.div
         className="text-center mb-16"
         initial={{ opacity: 0, y: 20 }}

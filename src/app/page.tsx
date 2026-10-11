@@ -1,14 +1,15 @@
 import ProjectsSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillsSection";
+import AboutSection from "./components/AboutSection";
 import Hero from "./components/Hero";
 import Contact from "./components/Contact";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Henry Navntoft | Full Stack Developer & Small Business Owner - Copenhagen, Denmark",
-  description: "Professional Full Stack Developer based in Copenhagen, Denmark. Specializing in WordPress, Shopify, and custom web development. Graduate of Copenhagen School of Arts and Technology. Available for freelance projects.",
+  title: "Henry Navntoft | Full Stack Developer in Copenhagen",
+  description: "Henry Navntoft is a full stack developer in Copenhagen. He builds WordPress, Shopify, and custom websites for small businesses across Denmark.",
   alternates: {
-    canonical: 'https://henrynavntoft.dk',
+    canonical: "https://www.henrynavntoft.dk/",
   },
 };
 
@@ -41,13 +42,14 @@ export default function Home() {
               'E-commerce Development',
               'Website Maintenance',
             ],
-            url: 'https://henrynavntoft.dk',
+            url: 'https://www.henrynavntoft.dk/',
           }),
         }}
       />
       
       <div>
         <Hero />
+        <AboutSection />
         <SkillsSection />
         <ProjectsSection />
         <Contact />
