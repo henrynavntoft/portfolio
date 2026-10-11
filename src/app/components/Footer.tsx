@@ -26,6 +26,22 @@ export default function Footer() {
     },
   ];
 
+  const shareUrl = "https://www.henrynavntoft.dk/";
+  const shareLinks = [
+    {
+      name: t("footer.shareLinkedIn"),
+      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
+    },
+    {
+      name: t("footer.shareFacebook"),
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+    },
+    {
+      name: t("footer.shareX"),
+      href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent("Henry Navntoft | Full Stack Developer in Copenhagen")}`,
+    },
+  ];
+
   const contactInfo = [
     {
       icon: Mail,
@@ -91,7 +107,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Copyright */}
+          {/* Copyright and sharing */}
           <div className="md:text-right">
             <p className="text-sm text-muted-foreground">
               © {currentYear} Henry Navntoft
@@ -99,6 +115,22 @@ export default function Footer() {
             <p className="text-xs text-muted-foreground/80 mt-1">
               {t('footer.allRightsReserved')}
             </p>
+            <div className="mt-4">
+              <h3 className="text-sm font-semibold text-foreground mb-3">{t('footer.share')}</h3>
+              <div className="flex flex-col gap-2 md:items-end">
+                {shareLinks.map((share) => (
+                  <Link
+                    key={share.name}
+                    href={share.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                  >
+                    {share.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/static/', '/gift/'],
       },
     ],
-    sitemap: 'https://henrynavntoft.dk/sitemap.xml',
-    host: 'https://henrynavntoft.dk',
+    sitemap: 'https://www.henrynavntoft.dk/sitemap.xml',
+    host: 'https://www.henrynavntoft.dk',
   }
 } 

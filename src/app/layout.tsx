@@ -13,11 +13,13 @@ import { Metadata } from "next";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 
+const siteUrl = "https://www.henrynavntoft.dk";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://henrynavntoft.dk"),
-  title: "Henry Navntoft | Full Stack Developer & Small Business Owner",
+  metadataBase: new URL(siteUrl),
+  title: "Henry Navntoft | Full Stack Developer in Copenhagen",
   description:
-    "Henry Navntoft - Full Stack Developer specializing in WordPress, Shopify, and custom web solutions. Based in Copenhagen, Denmark. Available for web development projects.",
+    "Henry Navntoft is a full stack developer in Copenhagen. He builds WordPress, Shopify, and custom websites for small businesses across Denmark.",
   keywords: [
     "Henry Navntoft",
     "Full Stack Developer",
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
     "Website Redesign",
     "SEO Optimization",
   ],
-  authors: [{ name: "Henry Navntoft", url: "https://henrynavntoft.dk" }],
+  authors: [{ name: "Henry Navntoft", url: siteUrl }],
   creator: "Henry Navntoft",
   publisher: "Henry Navntoft",
   robots: {
@@ -54,14 +56,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     alternateLocale: "da_DK",
-    url: "https://henrynavntoft.dk",
+    url: `${siteUrl}/`,
     siteName: "Henry Navntoft Portfolio",
-    title: "Henry Navntoft | Full Stack Developer & Small Business Owner",
+    title: "Henry Navntoft | Full Stack Developer in Copenhagen",
     description:
-      "Full Stack Developer specializing in WordPress, Shopify, and custom web solutions. Based in Copenhagen, Denmark.",
+      "Henry Navntoft is a full stack developer in Copenhagen. He builds WordPress, Shopify, and custom websites for small businesses across Denmark.",
     images: [
       {
-        url: "/og-image.png", // You'll need to add this image
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Henry Navntoft - Full Stack Developer",
@@ -70,20 +72,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Henry Navntoft | Full Stack Developer",
+    title: "Henry Navntoft | Full Stack Developer in Copenhagen",
     description:
-      "Full Stack Developer specializing in WordPress, Shopify, and custom web solutions.",
+      "Henry Navntoft is a full stack developer in Copenhagen. He builds WordPress, Shopify, and custom websites for small businesses across Denmark.",
     images: ["/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://henrynavntoft.dk",
-    languages: {
-      "en-US": "https://henrynavntoft.dk",
-      "da-DK": "https://henrynavntoft.dk",
-    },
-  },
-  verification: {
-    google: "your-google-verification-code", // Add your Google Search Console verification
   },
   category: "Web Development",
 };
@@ -130,8 +122,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Henry Navntoft",
-              url: "https://henrynavntoft.dk",
-              image: "https://henrynavntoft.dk/henry-navntoft.jpg",
+              url: "https://www.henrynavntoft.dk/",
+              image: "https://www.henrynavntoft.dk/henry-navntoft.jpg",
               jobTitle: "Full Stack Developer",
               description:
                 "Full Stack Developer specializing in WordPress, Shopify, and custom web solutions",

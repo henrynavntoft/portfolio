@@ -107,7 +107,7 @@ export default function Contact() {
   const timelineOptions = ['asap', 'week', 'month', 'quarter', 'flexible']
 
   return (
-    <section id="contact" className="py-5 lg:py-20 bg-background">
+    <section id="contact" className="scroll-mt-28 py-5 lg:py-20 bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"

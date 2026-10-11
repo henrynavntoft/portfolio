@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { Menu, Moon, Sun, Monitor, ExternalLink, Check, Linkedin, Github } from 'lucide-react';
+import { Menu, Moon, Sun, Monitor, Check, Linkedin, Github } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSelector from './LanguageSelector';
@@ -18,13 +18,12 @@ export default function Header() {
     const { theme, setTheme } = useTheme();
     const { t } = useLanguage();
 
-    const menuItems = [
-        { name: t('nav.home'), path: "/" },
-        {
-            name: t('nav.resume'),
-            path: "https://www.henrynavntoft.dk/Resume_Henry-Navntoft.pdf",
-            external: true
-        },
+    const pageLinks = [
+        { name: t("nav.about"), path: "/#about" },
+        { name: t("nav.skills"), path: "/#skills" },
+        { name: t("nav.projects"), path: "/#projects" },
+        { name: t("nav.contact"), path: "/#contact" },
+        { name: t("nav.resume"), path: "/Resume_Henry-Navntoft.pdf" },
     ];
 
     const socialLinks = [
@@ -43,14 +42,28 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
             <div className="container mx-auto px-6 py-4">
-                <div className="flex justify-between items-center">
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
                     <Link href="/" className="flex-shrink-0">
                         <div className="text-2xl font-bold text-foreground hover:opacity-90 transition-opacity">
                             HN
                         </div>
                     </Link>
+                    <nav aria-label={t("nav.navigation")} className="order-last flex w-full flex-wrap items-center gap-x-4 gap-y-2 text-sm sm:order-none sm:w-auto sm:flex-1">
+                        {pageLinks.map((item) => (
+                            <Link
+                                key={item.path}
+                                href={item.path}
+                                className="text-muted-foreground transition-colors hover:text-foreground"
+                                {...(item.path.endsWith(".pdf")
+                                    ? { target: "_blank", rel: "noopener noreferrer" }
+                                    : {})}
+                            >
+                                {item.name}
+                            </Link>
+                        ))}
+                    </nav>
 
-                    <div className="flex items-center gap-4">
+                    <div className="ml-auto flex items-center gap-4">
                         <LanguageSelector />
                         
                         <DropdownMenu>
@@ -60,23 +73,6 @@ export default function Header() {
                                 </button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end" className="w-48">
-                                <DropdownMenuLabel className="text-xs text-muted-foreground">{t('nav.navigation')}</DropdownMenuLabel>
-                                {menuItems.map((item, index) => (
-                                    <DropdownMenuItem key={`${item.name}-${index}`} asChild>
-                                        <Link 
-                                            href={item.path} 
-                                            className="cursor-pointer flex items-center gap-2"
-                                            target={item.external ? "_blank" : ""}
-                                            rel={item.external ? "noopener noreferrer" : ""}
-                                        >
-                                            {item.name}
-                                            {item.external && <ExternalLink className="h-3 w-3" />}
-                                        </Link>
-                                    </DropdownMenuItem>
-                                ))}
-
-                                <DropdownMenuSeparator />
-
                                 <DropdownMenuLabel className="text-xs text-muted-foreground">{t('nav.theme')}</DropdownMenuLabel>
                                 <DropdownMenuItem onClick={() => setTheme("light")} className="cursor-pointer flex items-center gap-2">
                                     <Sun className="h-4 w-4" />
